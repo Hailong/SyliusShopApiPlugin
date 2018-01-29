@@ -4,6 +4,7 @@
     <imports>
         <import resource="actions/checkout.xml"/>
         <import resource="actions/cart.xml"/>
+        <import resource="actions/order.xml"/>
         <import resource="actions/product.xml"/>
         <import resource="actions/customer.xml"/>
         <import resource="actions/taxon.xml"/>

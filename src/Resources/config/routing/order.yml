@@ -1,0 +1,5 @@
+shop_api_pay_order:
+    path: /{token}/pay
+    methods: [GET]
+    defaults:
+        _controller: sylius.shop_api_plugin.controller.order.pay_action

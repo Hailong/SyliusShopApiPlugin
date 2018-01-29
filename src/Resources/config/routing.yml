@@ -22,6 +22,10 @@ shop_api_checkout:
     resource: "@ShopApiPlugin/Resources/config/routing/checkout.yml"
     prefix: /shop-api/checkout
 
+shop_api_order:
+    resource: "@ShopApiPlugin/Resources/config/routing/order.yml"
+    prefix: /shop-api/order
+
 shop_api_customer:
     resource: "@ShopApiPlugin/Resources/config/routing/customer.yml"
     prefix: /shop-api

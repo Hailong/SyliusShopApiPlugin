@@ -40,7 +40,7 @@ final class InteractiveLoginListener
     public function onInteractiveLogin(InteractiveLoginEvent $interactiveLoginEvent): void
     {
         // Skip if it's not a shop API request.
-        if (!preg_match('/^shop_api_/', $interactiveLoginEvent->getRequest()->attributes->get('_route'))) {
+        if (!preg_match('/^shop_api_(?!pay_order)/', $interactiveLoginEvent->getRequest()->attributes->get('_route'))) {
             return;
         }
 
