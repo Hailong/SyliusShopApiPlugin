@@ -44,6 +44,11 @@ final class Address
     private $provinceName;
 
     /**
+     * @var string
+     */
+    private $phoneNumber;
+
+    /**
      * @param string $firstName
      * @param string $lastName
      * @param string $city
@@ -51,8 +56,9 @@ final class Address
      * @param string $countryCode
      * @param string $postcode
      * @param string $provinceName
+     * @param string $phoneNumber
      */
-    private function __construct($firstName, $lastName, $city, $street, $countryCode, $postcode, $provinceName = null)
+    private function __construct($firstName, $lastName, $city, $street, $countryCode, $postcode, $provinceName = null, $phoneNumber = null)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -61,6 +67,7 @@ final class Address
         $this->countryCode = $countryCode;
         $this->postcode = $postcode;
         $this->provinceName = $provinceName;
+        $this->phoneNumber = $phoneNumber;
     }
 
     /**
@@ -84,7 +91,8 @@ final class Address
             $address['street'],
             $address['countryCode'],
             $address['postcode'],
-            $address['provinceName'] ?? null
+            $address['provinceName'] ?? null,
+            $address['phoneNumber'] ?? null
         );
     }
 
@@ -142,5 +150,13 @@ final class Address
     public function provinceName()
     {
         return $this->provinceName;
+    }
+
+    /**
+     * @return string
+     */
+    public function phoneNumber()
+    {
+        return $this->phoneNumber;
     }
 }
