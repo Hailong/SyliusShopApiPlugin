@@ -61,5 +61,7 @@ final class CompleteOrderHandler
         $order->setCustomer($customer);
 
         $stateMachine->apply(OrderCheckoutTransitions::TRANSITION_COMPLETE);
+
+        return $order->getTokenValue();
     }
 }

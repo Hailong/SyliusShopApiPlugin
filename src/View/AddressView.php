@@ -40,4 +40,9 @@ class AddressView
      * @var string
      */
     public $provinceName;
+
+    /**
+     * @var string
+     */
+    public $phoneNumber;
 }

@@ -1,4 +1,16 @@
-shop_api_pay_order:
+shop_api_order_list:
+    path: /list/awaiting-payment
+    methods: [GET]
+    defaults:
+        _controller: sylius.shop_api_plugin.controller.order.list_awaiting_payment_action
+
+shop_api_order_view:
+    path: /{token}/view
+    methods: [GET]
+    defaults:
+        _controller: sylius.shop_api_plugin.controller.order.view_action
+
+shop_api_order_pay:
     path: /{token}/pay
     methods: [GET]
     defaults:

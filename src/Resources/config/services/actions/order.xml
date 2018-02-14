@@ -2,6 +2,20 @@
 
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+        <service id="sylius.shop_api_plugin.controller.order.list_awaiting_payment_action"
+                 class="Sylius\ShopApiPlugin\Controller\Order\ListAwaitingPaymentAction"
+        >
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="tactician.commandbus" />
+        </service>
+        <service id="sylius.shop_api_plugin.controller.order.view_action"
+                 class="Sylius\ShopApiPlugin\Controller\Order\ViewAction"
+        >
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="tactician.commandbus" />
+        </service>
         <service id="sylius.shop_api_plugin.controller.order.pay_action"
                  class="Sylius\ShopApiPlugin\Controller\Order\PayAction"
         >

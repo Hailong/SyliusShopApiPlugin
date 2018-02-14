@@ -51,13 +51,15 @@ final class CompleteOrderAction
     {
         $email = $this->provideUserEmail($request);
 
-        $this->bus->handle(new CompleteOrder(
+        $tokenValue = $this->bus->handle(new CompleteOrder(
             $request->attributes->get('token'),
             $email,
             $request->request->get('notes')
         ));
 
-        return $this->viewHandler->handle(View::create(null, Response::HTTP_NO_CONTENT));
+        return $this->viewHandler->handle(View::create([
+            'tokenValue' => $tokenValue,
+        ]));
     }
 
     /**
