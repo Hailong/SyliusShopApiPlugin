@@ -85,6 +85,7 @@ final class ViewAction
                 try {
                     $cartSummaryView = $this->cartQuery->getOneByToken($request->attributes->get('token'));
                     $cartSummaryView->payments['paymentState'] = $order->getPaymentState();
+                    $cartSummaryView->payments['notes'] = $order->getNotes();
 
                     return $this->viewHandler->handle(
                         View::create($cartSummaryView, Response::HTTP_OK)
