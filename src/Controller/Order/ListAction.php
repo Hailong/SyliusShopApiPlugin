@@ -69,7 +69,7 @@ final class ListAction
                 continue;
             }
 
-            $data[] = [
+            $data[$order->getId()] = [
                 'token' => $order->getTokenValue(),
                 'number' => $order->getNumber(),
                 'checkoutCompletedAt' => $order->getCheckoutCompletedAt(),
@@ -78,6 +78,8 @@ final class ListAction
             ];
         }
 
-        return $this->viewHandler->handle(View::create($data));
+        krsort($data);
+
+        return $this->viewHandler->handle(View::create(array_values($data)));
     }
 }
