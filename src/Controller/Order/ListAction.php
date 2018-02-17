@@ -74,7 +74,7 @@ final class ListAction
                 'number' => $order->getNumber(),
                 'checkoutCompletedAt' => $order->getCheckoutCompletedAt(),
                 'total' => $order->getTotal(),
-                'state' => $order->getState(),
+                'paymentState' => $order->getPaymentState(),
             ];
         }
 
